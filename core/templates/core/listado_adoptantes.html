@@ -1,0 +1,52 @@
+{% extends "core/base.html" %}
+
+{% load static %}
+
+{% block contenido %}
+
+
+<div class="row section-header">
+        <div class="col-full">
+            <h2 class="subhead">Listado de Adoptantes</h2>
+
+    <div class="main-container">
+      
+        <table>
+             <thead>
+                <tr>
+                    <th>Rut</th>
+                    <th>Nombre</th>
+                    <th>Fecha Nacimiento</th>
+                    <th>Email</th>
+                    <th>Telefono</th>
+                    <th>Region</th>
+                    <th>Ciudad</th>
+                    <th>Comuna</th>
+                    <th>Vivienda</th>
+
+                 </tr>
+            </thead>
+
+    {% for a in adoptantes %}
+    
+            <tr>
+                <td>{{ a.rut }}</td>
+                <td>{{ a.nombre }}</td>
+                <td>{{ a.fechaNacimiento }}</td>
+                <td>{{ a.email }}</td>
+                <td>{{ a.telefono }}</td>
+                <td>{{ a.region.region }}</td>
+                <td>{{ a.ciudad.ciudad }}</td>
+                <td>{{ a.comuna.comuna }}</td>
+                <td>{{ a.vivienda.vivienda }}</td>
+            </tr>
+
+            {% endfor %}
+
+        </table>
+
+    </div>
+</div>
+</div>
+
+{% endblock contenido %}
