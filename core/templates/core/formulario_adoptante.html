@@ -3,7 +3,8 @@
 {% load static %}
 
 {% block contenido %}
-
+<div class="row section-header">
+        <div class="col-full">
      <div class="contact-main">
 
         <form action="" id="formularioFundacion" method="POST">
@@ -16,7 +17,7 @@
             <label for="">Fecha Nacimiento:</label>
             <input type="date" name="dtpFechaNacimiento" id="dtpFechaNacimiento" max="2000-12-31" placeholder="DD/MM/AAAA"  >
             <input type="email" name="email" id="email"  required oninput="isEmail(this)" placeholder="EMAIL">
-            <input type="int" name="txtTelefono" id="txtTelefono"   onkeypress='return validaNumericos(event)' placeholder="TELEFONO">
+            <input type="int" name="txtTelefono" id="txtTelefono"  onkeypress='return validaNumericos(event)' placeholder="TELEFONO">
             <label for="">Region: </label>
             <p>
                     <select name="cboRegion" id="cboRegion">
@@ -36,15 +37,7 @@
                     </select>
            <p>
         <p>
-                        <label for="">Comuna: </label>
-                    <p>
-                            <select name="cboComuna" id="cboComuna">
-                                    <option value="">Seleccionar</option>
-                                    {% for m in comunas %}
-                                    <option value="{{ m.id }}">{{ m.comuna }}</option>
-                                    {% endfor %}
-                            </select>
-        <p>
+        
                 <label for="">Tipo Vivienda: </label>
            <p>
            <p>
@@ -57,13 +50,16 @@
          <p>
          <p>
          <p>
-        <input type="submit" value="ENVIAR" name="btnGuardar" id="BOTON">
+        <input type="submit" value="ENVIAR" name="btnGuardar" id="BOTONA">
         
         </table>
-        
+        <h4 class="textoMensaje">{{ mensaje }}</h4>
         </form>
     </div>
+     
+    <button class="boton" onclick="location.href='/adoptantes'">Listado de Adoptantes</button>
+</div>
+</div>
 
-<h3>{{ mensaje }}</h3>
 
 {% endblock contenido %}

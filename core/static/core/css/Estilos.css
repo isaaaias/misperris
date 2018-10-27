@@ -56,7 +56,7 @@ header{
     float: right;
     margin-top: 20px;
     color: white;
-    margin-right: 300px;
+  
     
 }
 
@@ -76,6 +76,7 @@ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color:white;
     font-weight: bold;
     text-decoration :none ;
+    text-transform: uppercase;
 }
 
 .landing {
@@ -88,7 +89,7 @@ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     width: 100%;
     overflow: hidden;
     position: relative;
-    height: 738.656px;
+    height: 820.656px;
 }
 
 .imagen_landing{
@@ -255,7 +256,7 @@ float: right;
  
  footer {
      width: 100%;
-     height: 300px;
+     height: 50px;
      background-color: 	#E6E6E6;
  }
 
@@ -291,7 +292,7 @@ float: right;
     }
     */
 
-    
+   
     
  .texto_footer{
      font-family: sans-serif;
@@ -304,7 +305,7 @@ float: right;
     background: #6DCCAA;
     padding: 10px 20px;
     box-sizing: border-box;
-    margin-top: 80px;
+    margin-top: 50px;
     margin-bottom: 80px;
     border-radius: 7px;
     
@@ -339,9 +340,68 @@ float: right;
 
 #BOTON {
     background: #6DCCAA;
-    color:black;
+    color:white;
     margin-top: 15px;
     padding: 15px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: larger;
+    margin: 12px 43px 24px 450px;
+}
+
+#BOTONA{
+    background: #6DCCAA;
+    color:white;
+    margin-top: 15px;
+    padding: 15px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: larger;
+
+}
+
+.te-main form {
+    margin: auto;
+    background: rgba(255,255,255,20);
+    background: #6DCCAA;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: 7px;
+    
+}
+
+.te-main H3 {
+    color:white;
+    text-align: center;
+    margin: 0;
+    font-size: 30px;
+    margin-bottom: 20px;
+    
+}
+
+.te-main input, textarea {
+    width: 35%;
+    margin-bottom: 20px;
+    padding: 15px;
+    box-sizing: border-box;
+    margin-right: 3%;
+}
+
+.te-main select {
+    width: 45%;
+    margin-bottom: 20px;
+    padding: 15px;
+    box-sizing: border-box;
+    margin-right: 3%;
+}
+
+
+
+
+.te-main label {
+ color: white;
+ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
 }
 
 /*CODIFO CSS TABLE*/
@@ -354,11 +414,14 @@ float: right;
     color: black;
     margin-top: 30px;
     text-align: center;
+   
 
   }
+  
 #main-container{
 	margin: 500px;
-	width: 10px;
+    width: 10px;
+  
 }
 
 .main-container table{
@@ -367,9 +430,11 @@ float: right;
     margin: auto;
 	text-align: left;
 	border-collapse: collapse;
-	width: 80%;
+	width: 100%;
     margin-top: 50px;
     margin-bottom: 50px;
+    box-sizing: border-box;
+    border-radius: 7px;
 }
 
 
@@ -411,7 +476,10 @@ tr:hover td{
 }
 
 
-
+.textoMensaje{
+    color: white;
+    text-transform: uppercase;
+}
 
 
 
@@ -451,13 +519,13 @@ tr:hover td{
 
     }
     .social {
-  margin-left: 130px;
-    justify-content: center;
+        margin-left: 200px;
+        justify-content: center;
     
     }
 
     header {
-        height: 250px;
+        height: 280px;
       
     }
 
@@ -497,5 +565,113 @@ tr:hover td{
     .contact-main form {
         width: 370px;
     }
+
+    .te-main form {
+        width: auto;
+    }
+
+    #BOTON {
+        margin: auto;
+        width: 100%;
+    }
+
+    .te-main select{
+        width: 100%
+    }
+
+    .te-main input, textarea {
+        width: 100%;
+       
+    }
+
+    .te-main label{
+        width: 100%
+    }
+
+    body {
+        font-family: "Open Sans", sans-serif;
+        line-height: 1.25;
+      }
+      
+      table {
+        border: 1px solid #6DCCAA;;
+        border-collapse: collapse;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        table-layout: fixed;
+      }
+      
+      table caption {
+        font-size: 1.5em;
+        margin: .5em 0 .75em;
+      }
+      
+      table tr {
+        background-color:#6DCCAA;;
+        border: 1px solid #6DCCAA;;
+        padding: .35em;
+      }
+      
+      table th,
+      table td {
+        padding: .625em;
+        text-align: center;
+      }
+      
+      table th {
+        font-size: .85em;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+      }
+      
+      @media screen and (max-width: 600px) {
+        table {
+          border: 0;
+        }
+      
+        table caption {
+          font-size: 1.3em;
+        }
+        
+        table thead {
+          border: none;
+          clip: rect(0 0 0 0);
+          height: 1px;
+          margin: -1px;
+          overflow: hidden;
+          padding: 0;
+          position: absolute;
+          width: 1px;
+        }
+        
+        table tr {
+          border-bottom: 3px solid #6DCCAA;;
+          display: block;
+          margin-bottom: .625em;
+        }
+        
+        table td {
+          border-bottom: 1px solid #6DCCAA;;
+          display: block;
+          font-size: .8em;
+          text-align: right;
+        }
+        
+        table td::before {
+          /*
+          * aria-label has no advantage, it won't be read inside a table
+          content: attr(aria-label);
+          */
+          content: attr(data-label);
+          float: left;
+          font-weight: bold;
+          text-transform: uppercase;
+        }
+        
+        table td:last-child {
+          border-bottom: 0;
+        }
+    
 }
 

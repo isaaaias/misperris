@@ -28,7 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 #REDIRIGIDO A CARPETA RAIZ
-LOGIN_REDIRECT_URL="adoptantes"
+LOGIN_REDIRECT_URL="formulario_mascota"
 
 LOGOUT_REDIRECT_URL="/accounts/login"
 
@@ -131,3 +131,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, '/')
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

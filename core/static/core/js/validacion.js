@@ -5,7 +5,7 @@ $(document).ready(function() {
         return this.optional(element) || validaRut(value); 
     }, "Revise el RUT");
     jQuery.validator.addMethod("txtTelefono", function(value, element) {
-        return this.optional(element) || soloLetras(value);
+        return this.optional(element) || validaNumericos(value);
     }, "Solo Numeros"); 
     jQuery.validator.addMethod("email", function(value, element) { 
         return this.optional(element) || isEmail(value); 
@@ -34,20 +34,13 @@ $(document).ready(function() {
             },
             txtTelefono:{
             required:true,
-            number:true,
-            minlength: 9,
-            maxlength: 12,
-            txtTelefono:true
+        
             },
             cboRegion:{
             required:true,
             
             },
             cboCiudad:{
-            required:true,
-            
-            },
-            cboComuna:{
             required:true,
             
             },
@@ -90,12 +83,75 @@ $(document).ready(function() {
             cboCiudad:{
                 required:"Seleccione una Ciudad"
             },
-            cboComuna:{
-                required:"Seleccione una Comuna"
-            },
             cboVivienda:{
                 required:"Seleccione tipo de Vivienda",
             },
         }
+
+ 
     });
+
+    $(document).ready(function() {
+    $("#formularioMascota").validate({
+        rules:{
+            nombre:{
+                required:true,
+            },
+            genero:{
+                required:true,
+            },
+            FechaIngreso:{
+                required:true,
+            },
+            FechaNacimiento:{
+                required:true,
+            },
+            descripcion:{
+                required:true,
+            },
+            image:{
+                required:true,
+            },
+            /*
+            raza:{
+               required:true,
+            },
+            */
+            cboTipo:{
+                required:true,
+            },
+        
+        },
+        messages:{
+            nombre:{
+                required:"Ingrese el nombre de la mascota",
+            },
+            genero:{
+                required:"Ingrese el genero de la mascota",
+            },
+            FechaIngreso:{
+                required:"Ingrese el fecha de ingreso de la mascota",
+            },
+            FechaNacimiento:{
+                required:"Ingrese el fecha de nacimiento de la mascota",
+            },
+            descripcion:{
+                required:"Ingrese descripcion de la mascota",
+            },
+            image:{
+                required:"Ingrese imagen de la mascota",
+            },
+            /*
+            raza:{
+                required:"Seleccione raza",
+            },
+            */
+            cboTipo:{
+                required:"Ingrese estado de la mascota",
+            },
+        }
+
+ 
+    });
+});
 });

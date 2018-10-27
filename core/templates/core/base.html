@@ -20,6 +20,8 @@
     <script src="{% static 'core/js/isEmail.js' %}"></script>
     <script src="{% static 'core/js/validaNumericos.js' %}"></script> 
     <script src="{% static 'core/js/soloLetras.js' %}"></script> 
+    <script src="{% static 'core/js/valida.js' %}"></script> 
+
 </head>
 <body>
     <header>
@@ -35,15 +37,15 @@
                     <a href="#">Quienes somos</a>
                 </li>
                 <li>
-                    <a href="http://localhost/misperris/registroPostulante.php">Servicios</a>
+                    <a href="{% url 'mascotas' %}">Servicios</a>
                 </li>
                 <li>
-                    <a href="#">Contactanos</a>
+                    <a href="{% url 'formulario_adoptante' %}">Contactanos</a>
                 </li>
 
                 {% if request.user.is_authenticated%}
                 <li>
-                    <a href="{% url 'logout' %}">Cerrar Sesión</a>
+                    <a href="{% url 'home' %}">Cerrar Sesión</a>
                 </li>
                 {% else %}
                 <li>
@@ -55,7 +57,7 @@
     <div class="landing">
         <div class="slider">
             <div >
-                <img   class="imagen_landing " src="{% static 'core/img/Apolo.jpg' %}" alt="Perros" >
+                <img  title="Oso" class="imagen_landing " src="{% static 'core/img/Apolo.jpg' %}" alt="Perros" >
       
             </div>
             <div>
