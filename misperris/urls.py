@@ -25,6 +25,11 @@ urlpatterns = [
     path('', include('core.urls')),
     path('admin/', admin.site.urls),
     path('accounts/',include('django.contrib.auth.urls')),
+    path('accounts/',include('accounts.urls')),
+    path('oauth/',include('social_django.urls',namespace='social')),
+    #dejarlo vacio es que está en la raiz
+    path('',include('pwa.urls')),
+
 
 ]
 

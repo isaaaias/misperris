@@ -87,6 +87,10 @@ def eliminar_adoptante(request, id):
         mensaje ="No se ha podido eliminar"
         messages.error(request, mensaje)
         
+
+
+
+        
     #el redirect lo redirige por alias de una ruta
     return redirect(to="adoptantes")
 @login_required

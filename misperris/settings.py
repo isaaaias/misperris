@@ -32,6 +32,12 @@ LOGIN_REDIRECT_URL="formulario_mascota"
 
 LOGOUT_REDIRECT_URL="/accounts/login"
 
+#application definitions
+
+SOCIAL_AUTH_FACEBOOK_KEY = '477252199345614'
+SOCIAL_AUTH_FACEBOOK_SECRET ='d3473b9fa63ba6cda2e9b880aaf733fd'
+
+
 
 # Application definition
 
@@ -44,8 +50,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'core.apps.CoreConfig',
     'accounts',
-   
+    'social_django',
+    'crispy_forms' ,
+    'api',
+    'pwa',
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -55,6 +66,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware'
 ]
 
 ROOT_URLCONF = 'misperris.urls'
@@ -70,6 +82,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
@@ -134,3 +148,23 @@ STATICFILES_DIRS = (
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+AUTHENTICATION_BACKENDS =(
+    'social_core.backends.facebook.FacebookOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR, 'serviceworker.js')
+#nombre de la app en el manifiesto
+PWA_APP_NAME = "Mis Perris"
+
+#icono(s) de la app en el manifiesto (esto se ve en el celular)
+PWA_APP_ICONS = [
+    {
+        'src': '/static/core/img/logo.png',
+        'sizes' : '329x60'
+    }
+]
+
+SOCIAL_AUTH_LOGIN_ERROR_URL = '/'
+SOCIAL_AUTH_RAISE_EXCEPTIONS = False
